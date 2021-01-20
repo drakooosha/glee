@@ -1,0 +1,11 @@
+[0118/124859.342:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[0118/153053.779:ERROR:process_info.cc(359)] UncheckedAllocate
+[0118/153053.813:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Kirill\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\6fd75aee-5c5e-4d75-ae42-fd1d43da7335: Системе не удается найти указанный путь. (0x3)
+[0118/153058.779:ERROR:process_info.cc(359)] UncheckedAllocate
+[0118/193938.963:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[0119/143630.284:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[0119/200250.026:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[0120/005924.430:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Kirill\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\66aa1062-39f9-4a18-b35e-984a60c34d98: Системе не удается найти указанный путь. (0x3)
+[0120/014834.991:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[0120/032600.917:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Kirill\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\db09b3e6-ecde-4bff-9972-cf57718e4d24: Системе не удается найти указанный путь. (0x3)
+[0120/033637.797:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)

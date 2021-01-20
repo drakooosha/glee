@@ -1,8 +1,544 @@
+@import 'reset';
+@import 'libs';
 @import 'vars';
 @import 'fonts';
-@import 'reset';
 @import 'global';
 
+.header {
+    &__inner {
+        display: flex;
+        padding: 48px 0 45px 0;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
 
+.menu {
+    &__list {
+        display: flex;
+        @extend %rubik-500;
+        font-size: 15px;
+        color: #436372;
+    }
+
+    &__item {
+        transition: color 0.3s linear;
+    }
+
+    &__item:not(:last-child){
+        margin-right: 35px;
+    }
+
+    &__item:hover,
+    &__item--active {
+        color: $accent-color;
+    }
+}
+
+.user-nav {
+    display: flex;
+
+    &__search, 
+    &__more {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        transition: transform 0.3s linear;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__search {
+        margin-right: 22px;
+        background-color: #edf1f4;
+    }
+
+    &__search:hover, 
+    &__more:hover {
+        transform: scale(1.1);
+    }
+
+    &__info {
+        display: flex;
+        width: 178px;
+        margin-right: 17px;
+        padding: 9px 0;
+        background-color: #fcd7b6;
+        border-radius: 25px;
+    }
+
+    &__likes, 
+    &__basket {
+        position: relative;
+        display: flex;
+        width: 50%;
+        padding-bottom: 2px;
+        @extend %dmsans-400;
+        font-size: 10px;
+        transition: transform 0.3s linear;
+        align-items: flex-end;
+    }
+
+    &__likes:hover,
+    &__basket:hover {
+        transform: translateY(-5px);
+    }
+
+    &__likes {
+        padding-left: 40px;
+        border-right: 1px solid #fde7d3;
+    }
+
+    &__basket {
+        padding-left: 28px;
+    }
+    
+    &__number {
+        position: absolute;
+        top: 4px;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        text-align: center;
+        background-color: #ffffff;
+        border-radius: 50%;
+    }
+
+    &__number--right {
+        right: 20px;
+    }
+
+    &__number--left {
+        left: 39px;
+    }
+
+    &__more {
+        padding: 0;
+        background-color: $accent-color; 
+        border: 0;
+        cursor: pointer;
+    }
+
+    &__more:focus {
+        outline-color: $accent-color;
+    }
+}
+
+.advantages {
+    &__inner {
+        padding-bottom: 68px;
+    }
+
+    &__item {
+        position: relative;
+        min-height: 76vh;
+        padding: 219px 0 100px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: center;
+    }
+
+    &__title {
+        max-width: 411px;
+        margin-bottom: 20px;
+        @extend %rubik-500;
+        font-size: 72px;
+        line-height: 1;
+        text-transform: uppercase;
+        color: #243f4d;
+        text-align: left;
+    }
+
+    &__content {
+        max-width: 360px;
+        margin-bottom: 35px;
+        font-size: 18px;
+        line-height: 1.7;
+        color: #436372;
+    }
+
+    &__link {
+        display: flex;
+        max-width: 200px;
+        padding:25px 19px 21px 25px;
+        height: 60px;
+        background-color: $accent-color;
+        color:#ffffff;
+        transition: color 0.3s linear;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__link:focus {
+        outline-color: #243f4d;
+    }
+
+    &__link:hover {
+        color: #243f4d;
+    }
+
+    &__link svg {
+        transition: transform 0.3s linear;
+    }
+
+    &__link:hover svg {
+        transform: scale(1.2);
+    }
+
+    .slick-dots {
+        position: absolute;
+        bottom: 45px;
+        left: 50%;
+        display: flex;
+        transform: translateX(-50%);
+        
+        li {
+            opacity: 0.5;
+            transition: opacity 0.3s linear;
+        }
+
+        li:not(:last-child){
+            margin-right: 10px;     
+        }
+
+        li:hover {
+            opacity: 1;
+        }
+
+        .slick-active {
+            opacity: 1;
+        }
+
+        button {
+            width: 30px;
+            height: 30px;
+            padding: 0;
+            @extend %rubik-500;
+            line-height: 1;
+            font-size: 11px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            border: 0;
+            color: #243f4d;
+            outline-color: #ffffff;
+            cursor: pointer;
+        }
+    }
+
+    &__descr {
+        display: flex;
+        background-color: #fef7f0;
+    }
+
+    &__info-item {
+        display: flex;
+        padding: 35px 0px 37px 0px;
+        flex: 1;
+        justify-content: center;
+    }
+
+    &__info-item:not(:last-child) {
+        border-right: 1px solid #e8e4df;
+    }
+
+    &__icon {
+        margin: 12px 30px 0 0; 
+    }
+
+    &__info {
+        max-width: 217px;
+        width: 100%;
+    }
+
+    &__top {
+        @extend %dmsans-700;
+        font-size: 18px;
+        line-height: 2.1;
+        color: #414141;
+    }
+
+    &__text {
+        @extend %dmsans-400;
+        line-height: 1.9;
+        color: #585858;
+    }
+}
+
+.products {
+    &__inner {
+        padding-bottom: 104px;
+    }
+
+    &__title {
+        margin-bottom: 25px;
+    }
+
+    &__filter {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 63px;
+    }
+
+    &__category:not(:last-child) {
+        margin-right: 31px;
+    }
+
+    &__btn {
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        color: #8b8b8b8b;
+        transition: all 0.3s linear;
+        cursor: pointer;
+    }
+
+    &__btn:hover {
+        color: $title-color;
+    }
+
+    .mixitup-control-active {
+        outline-color: $title-color;
+        color: $title-color;
+    }
+
+    &__items {
+        display: grid;
+        margin-bottom: 175px;
+        padding-top: 10px;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(2,1fr);
+        grid-gap: 40px 20px;
+    }
+    
+    &__item {
+        position: relative;
+        display: flex;
+        padding: 11px 0 36px 0;
+        @extend %dmsans-700;
+        background-color: #fcfcfc;
+        border-radius: 7px;
+        box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+        cursor: pointer;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__item:hover &__image {
+        transform: translateY(20px);
+    }
+
+    &__item:hover &__user-menu {
+        opacity: 1;
+    }
+
+    &__image {
+        margin-bottom: 81px;
+        transition: transform 0.2s linear;
+    }
+
+    &__name {
+        margin-bottom: 8px;
+        @extend %dmsans-500;
+        font-size: inherit;
+    }
+
+    &__cost {
+        color: $accent-color;
+        font-size: 0;
+    }
+
+    &__value,
+    &__number {
+        font-size: 16px;
+    }
+
+    &__user-menu {
+        position: absolute;
+        display: flex;
+        top:48%;
+        opacity: 0;
+        transition: opacity 0.3s linear;
+    }
+
+    &__link {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        transition: background-color 0.3s linear;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__link:hover {
+        background-color: $accent-color;
+    }
+
+    &__link:not(:last-child) {
+        margin-right: 12px;
+    }
+
+    &__link  path {
+        fill:#a3bbc8;
+        transition: fill 0.3s linear;
+    }
+
+    &__link:hover path {
+        fill:#ffffff;
+    }
+}
+
+.footer {
+    &__inner {
+        padding: 80px 0 36px;
+        font-size: 14px;
+        color: #7b7b7b;
+    }
+
+    &__top {
+        display: flex;
+        padding-bottom: 70px;
+        border-bottom: 1px solid #dae4e9;
+    }
+
+    &__contacts,
+    &__item:not(:last-child) {
+        max-width: 300px;
+        width: 100%;
+    }
+
+    &__logo {
+        margin-bottom: 28px;
+    }
+
+    &__info {
+        font-style: normal;
+    }
+
+    &__street {
+        max-width: 200px; 
+        margin-bottom: 15px;
+        line-height: 1.7;    
+    }
+    
+    &__uppercase {
+        text-transform: uppercase;
+    }
+
+    &__phone,
+    &__service:not(:last-child),
+    &__account-item:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    &__number,
+    &__link,
+    &__mail-address {
+        transition: color 0.2s linear;
+    }
+
+    &__number:hover,
+    &__mail-address:hover {
+        color: #243f4d;
+    }   
+
+    &__main {
+        display: flex;
+        max-width: 870px;
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    &__title {
+        margin-bottom: 19px;
+        @extend %dmsans-700;
+        font-size: 16px;
+        line-height: 1.3;
+        text-transform: uppercase;
+        color: #1f2044;
+    }
+
+    &__link:hover {
+        color: #1f2044;;
+    }
+
+    &__newsletter {
+        margin-bottom: 37px;
+        line-height: 1.5;
+    }
+
+    &__form {
+        display: flex;
+    }
+
+    &__email,
+    &__button {
+        height: 40px;
+        transition: outline-color 0.3s linear;
+        outline-color: #ffffff;
+    }
+    
+    &__email {
+        width: 170px;
+        padding: 0 16px;
+        background-color: #fef7f0;
+        border: 0;
+    }
+    
+    &__email:focus,
+    &__button:focus {
+        outline-color: #436372;
+    }
+
+    &__email::placeholder {
+        @extend %dmsans-400;
+        font-size: 12px;
+        color: #234969;
+    }
+    
+    &__button {
+        width: 100px;
+        padding: 0;
+        @extend %dmsans-400;
+        font-size: 14px;
+        background-color: $accent-color;        
+        border: 0;
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 35px;
+    }
+}
+
+.footer-nav {
+    &__list{
+        display: flex;
+    }
+    
+    &__item:not(:last-child){
+        padding: 0px 15px;
+        border-right: 1px solid #7b7b7b;
+    }
+
+    &__item:last-child {
+        margin-left: 15px;
+    }
+
+    &__link {
+        cursor: pointer;
+        transition: color 0.3s linear;
+    }
+    
+    &__link:hover {
+        color: $accent-color;
+    }
+}
 
 @import 'media';
