@@ -1,10 +1,21 @@
-$title-color : #191919;
 $accent-color: #a3bbc8;
+$accent_bg-color: #edf1f4;
+$title-color : #191919;
+$product_header-color : #333333;
+$main_text-color : #243f4d;
+$second_text-color : #436372;
+
+@mixin line-clamp($lines) {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+  }
 
 %dmsans-400 {
     font-family: 'DMSans-Regular', sans-serif;
     font-weight: 400;
-}
+}      
 
 %dmsans-500 {
     font-family: 'DMSans-Medium', sans-serif;
@@ -29,4 +40,12 @@ $accent-color: #a3bbc8;
 %rubik-500 {
     font-family: 'Rubik-Medium', sans-serif;
     font-weight: 500;
+}
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
 }

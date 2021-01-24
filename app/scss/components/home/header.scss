@@ -1,0 +1,133 @@
+.header {
+    &__inner {
+        padding: 48px 0 45px 0;
+    }
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        &:not(:last-child){
+            margin-right: 35px;
+        }
+    }
+    
+    &__link {
+        font-family: 'Rubik';
+        font-weight: 500;
+        font-size: 15px;
+        color: $second_text-color;
+        transition: color 0.3s linear;
+
+        &:hover,
+        &--active {
+            color:$accent-color;
+        }
+    }
+
+    &__user {
+        display: flex;
+    }
+
+    &__button {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        border-radius: 50%;
+        border: 0;
+        transition: transform 0.3s linear;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+
+        &--search {
+            margin-right: 22px;
+            background-color: $accent_bg-color;
+        }
+
+        &--more {
+            background-color: $accent-color;
+        }
+    }
+
+    &__search {
+       width:15px;
+       height:15px;
+    }  
+    
+    
+    &__info {
+        display: flex;
+        width: 178px;
+        margin-right: 17px;
+        padding: 9px 0;
+        background-color: #fcd7b6;
+        border-radius: 25px;
+    }
+    
+    &__user-link {
+        position: relative;
+        display: flex;
+        width: 50%;
+        padding-bottom: 2px;
+        font-family: 'DMSans';
+        font-weight: 400;
+        font-size: 10px;
+        transition: transform 0.3s linear;
+        align-items: flex-end;
+        
+        &:hover{
+            transform: translateY(-5px);
+        }        
+        
+        &--likes {
+            padding-left: 40px;
+            border-right: 1px solid #fde7d3;
+        }
+        
+        &--basket {
+            padding-left: 28px;
+        }
+    }
+
+    &__svg {
+        width: 19px;
+        height: 17px;
+    }
+    
+    &__number {
+        position: absolute;
+        top: 4px;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        text-align: center;
+        background-color: #ffffff;
+        border-radius: 50%;
+
+        &--right {
+            right: 20px;
+        }
+
+        &--left {
+            left: 39px;
+        }
+    }
+
+    &__more {
+        width: 21px;
+        height: 21px;
+    }
+}

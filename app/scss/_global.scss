@@ -1,20 +1,20 @@
 body {
-    @extend %rubik-400;
+    font-family: 'Rubik';
+    font-weight: 400;
     font-size: 16px;
     line-height: 1.3;
     background-color: #ffffff;
+    color: $main_text-color;
 }
 
 .container {
     max-width: 1800px;
     margin: 0 auto;
     padding: 0 15px;
-}
 
-.container-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+    &--main {
+        max-width: 1200px;
+    }
 }
 
 .sr-only {
@@ -30,8 +30,9 @@ body {
 }
 
 .title {
-    @extend %dmsans-700;
+    font-family: 'DMSans';
+    font-weight: 700;
     font-size: 36px;
     text-align: center;
-    color: #191919;
+    color: $title-color;
 }

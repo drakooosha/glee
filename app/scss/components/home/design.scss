@@ -1,0 +1,83 @@
+.design {
+    &__inner {
+        padding-bottom: 120px;
+    }
+    
+    &__title {
+        margin-bottom: 21px;
+    }
+
+    &__filter {
+        margin-bottom: 77px;
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2,1fr);
+        grid-gap: 34px 30px;
+    }
+
+    &__card {
+        position: relative;
+        display: block;
+        padding: 40px 0px 130px 37px;
+        font-family: 'DMSans';
+        font-weight: 700;
+        background-color: #f8f8f8;
+        border-radius: 0;
+        box-shadow: none;
+        cursor: pointer;
+        overflow: hidden;
+    }
+}
+
+.card {
+    &__title {
+        max-width: 176px;
+        text-align: left;
+        margin-bottom: 7px;
+        color: #191919;
+        @include line-clamp(2);
+    }
+
+    &__img {
+        max-width: 417px;
+        max-height: 178px;
+        position: absolute;
+
+        &--first {
+            bottom: 36px;
+            right: -77px;
+        }
+        
+        &--second {
+            bottom: 38px;
+            right: -43px;
+        }
+        
+        &--third {
+            top: 55px;
+            right: 57px;
+        }
+        
+        &--fourth {
+            bottom: 28px;
+            right: -40px;
+        }
+        
+        &--fifth {
+            top: 40px;
+            right: 31px;
+        }
+
+        &--sixth {
+            bottom: 28px;
+            right: -147px; 
+        }
+    }
+
+    &__category {
+        color: $accent-color;
+    }
+}

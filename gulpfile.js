@@ -4,8 +4,9 @@ const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
 const uglify = require('gulp-uglify');
 const browserSync = require('browser-sync').create();
-const imagemin = require('gulp-imagemin')
-const del = require('del')
+const imagemin = require('gulp-imagemin');
+const del = require('del');
+const svgSprites = require('gulp-svg-sprite');
 
 function browsersync() {
     browserSync.init({
@@ -33,6 +34,7 @@ function scripts() {
         'node_modules/jquery/dist/jquery.js',  //важна последовательность
         'node_modules/slick-carousel/slick/slick.js',
         'node_modules/mixitup/dist/mixitup.js',
+        'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
         'app/js/main.js'
     ])
         .pipe(concat('main.min.js'))
@@ -57,6 +59,18 @@ function images() {
         .pipe(dest('dist/images'))
 }
 
+function svgsprites() {
+    return src('app/images/icons/*.svg')
+        .pipe(svgSprites({
+            mode: {
+                stack: {
+                    sprite: "../sprite.svg"
+                }
+            }
+        }))
+        .pipe(dest('app/images')) 
+}
+
 function build() {
     return src([
         'app/**/*.html',
@@ -74,15 +88,18 @@ function watching() {
     watch(['app/scss/**/*.scss'], styles);
     watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
     watch(['app/*.html']).on('change', browserSync.reload);
+    watch(['app/images/icons/*.svg'], svgsprites);
 }
 
-exports.styles = styles;
-exports.scripts = scripts;
-exports.browsersync = browsersync;
-exports.watching = watching;
-exports.images = images;
-exports.cleanDist = cleanDist;
+// exports.styles = styles;
+// exports.scripts = scripts;
+// exports.browsersync = browsersync;
+// exports.watching = watching;
+// exports.images = images;
+// exports.cleanDist = cleanDist;
+// exports.svgsprites = svgsprites;
+
 
 exports.build = series(cleanDist, images, build);
-exports.default = parallel(styles, scripts, browsersync, watching);
+exports.default = parallel(styles, scripts, svgsprites,browsersync, watching);
 
