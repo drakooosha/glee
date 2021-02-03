@@ -1,0 +1,42 @@
+.mixitup-nav{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 63px;
+
+    &__category {
+        &:not(:last-child) {
+            margin-right: 31px;
+
+            @include _600 {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @include _600 {
+        flex-direction: column;
+    }
+
+    &__btn {
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        color: #8b8b8b;
+        transition: color 0.3s linear;
+        cursor: pointer;
+        
+        &:hover {
+            color: $title-color;
+        }
+
+        @include _600 {
+            width: 100%;
+            padding: 15px 0;
+        }
+    }
+
+    .mixitup-control-active {
+        outline-color: $accent-color;
+        color: $title-color;
+    }
+}

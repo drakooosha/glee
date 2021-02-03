@@ -12,34 +12,46 @@ $second_text-color : #436372;
     -webkit-box-orient: vertical;
   }
 
-%dmsans-400 {
-    font-family: 'DMSans-Regular', sans-serif;
-    font-weight: 400;
-}      
-
-%dmsans-500 {
-    font-family: 'DMSans-Medium', sans-serif;
-    font-weight:500;
+ @mixin _1800 {
+  @media (max-width: 1800px){
+      @content;
+  }
 }
 
-%dmsans-700 {
-    font-family: 'DMSans-Bold', sans-serif;
-    font-weight: 700;
+@mixin _1200 {
+    @media (max-width: 1200px){
+        @content;
+    }
 }
 
-%poppins-700 {
-    font-family: 'Poppins-Bold', sans-serif;
-    font-weight: 700;
+@mixin _920 {
+    @media (max-width: 920px){
+        @content;
+    }
 }
 
-%rubik-400 {
-    font-family: 'Rubik-Regular', sans-serif;
-    font-weight: 400;
+@mixin _768 {
+    @media (max-width: 768px){
+        @content;
+    }
 }
 
-%rubik-500 {
-    font-family: 'Rubik-Medium', sans-serif;
-    font-weight: 500;
+@mixin _600 {
+    @media (max-width: 600px){
+        @content;
+    }
+}  
+
+@mixin w1100_h1000 {
+    @media (max-width:1100px) and (min-height:1000px) {
+        @content;
+    }
+}
+
+@mixin w600_h750 {
+    @media (max-width: 600px) and (min-height: 750px){
+        @content;
+    }
 }
 
 @function max($numbers...) {

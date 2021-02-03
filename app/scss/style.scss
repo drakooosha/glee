@@ -1,14 +1,24 @@
-@import 'reset';
 @import 'vars';
+@import 'reset';
 @import 'libs';
 @import 'fonts';
-@import 'global';
+
+
+/*components*/
+@import 'components/header';
+@import 'components/footer';
+@import 'components/product-card';
+@import 'components/product-bigcard';
+@import 'components/insights';
+@import 'components/blog-card';
+@import 'components/partners';
 
 /*Home-page*/
-@import 'components/home/header';
-@import 'components/home/advantages';
+@import 'components/home/advantages-slider';
+@import 'components/home/advantages-info';
+@import 'components/home/mixitup-nav';
 @import 'components/home/products';
 @import 'components/home/design';
 @import 'components/home/video';
-@import 'components/home/articles';
-@import 'components/home/footer';
+
+@import 'global';

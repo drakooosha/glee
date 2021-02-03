@@ -1,0 +1,235 @@
+.advantages-slider {
+    &__inner {
+        position: relative;
+        display: flex;
+        min-height: 76vh;
+        padding-bottom: 90px;
+        background-color: #fcd7b6;
+        align-items: center;
+        cursor: pointer;
+
+        &::before {
+            content: ' ';
+            position: absolute;
+            top: 50%;
+            right: 9%;
+            width: 33vw;
+            height: 59vh;
+            background-image: url('../images/slider-circle.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            transform: translateY(-50%);
+
+            @include _1200 {
+                display: none;
+            }
+        }
+
+        @include w1100_h1000 {
+            min-height: 35vh;
+        }
+
+        @include w600_h750 {
+            min-height: 64vh;
+        }
+    }
+
+    &__insight {
+        position: relative;
+        display: flex;
+        margin-top: 30px;
+        justify-content: space-between;
+
+        @include _768 {
+            margin-top: 20px;
+        }
+
+        @include _600 {
+            flex-direction: column;
+        }
+    }
+
+    &__content {
+        position: relative;
+        display: flex;
+        margin-right: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-shrink: 0;
+
+        @include _1200 {
+            flex-shrink: 1;
+        }
+
+        @include _920 {
+            max-width: 320px;
+            margin-right: 10px;
+        }
+
+        @include _768 {
+            max-width: 245px;
+        }
+    }
+
+    &__title {
+        max-width: 411px;
+        width: 100%;
+        margin-bottom: 20px;
+        font-family: 'Rubik','Arial', sans-serif;
+        font-weight: 500;
+        font-size: 72px;
+        line-height: 1;
+        text-transform: uppercase;
+        color: #243f4d;
+        text-align: left;
+
+        @include _1200 {
+            font-size: 60px;
+        }
+
+        @include _920 {
+            margin-bottom: 10px; 
+            font-size: 40px;
+        }
+
+        @include _768 {
+            font-size: 37px;
+        }
+    }
+
+    &__title,
+    &__descr,
+    &__text {
+        @include line-clamp(2);
+    }
+
+    &__descr {
+        max-width: 360px;
+        width: 100%;
+        margin-bottom: 35px;
+        font-size: 18px;
+        line-height: 1.7;
+        color: #436372;
+
+        @include _1200 {
+            margin-bottom: 15px;
+        }
+
+        @include _920 {
+            margin-bottom: 10px;
+            line-height: 1.5;
+            @include line-clamp(3);
+        }
+
+        @include _768 {
+            font-size: 16px;
+        }
+    }
+
+    &__link {
+        min-width: 200px;
+        padding:22px 28px;
+        height: 60px;
+        background-color: $accent-color;
+        background-image: url('../images/sprite.svg#button_arrow-icon');
+        background-repeat: no-repeat;
+        background-size: 22px;
+        background-position: 160px center;
+        color:#ffffff;
+        transition: all 0.3s linear;
+
+        &:focus {
+            outline-color: #243f4d;
+        }
+        
+        &:hover {
+            color: #243f4d;
+            background-size: 24px;
+        }
+
+        @include _1200 {
+            min-width: 150px;
+            padding: 18px;
+            height: 55px;
+            background-position: 115px center;
+        }
+
+        @include _768 {
+            padding: 15px;
+            height: 50px;
+            background-position: 115px center;
+        }
+
+        @include _600 {
+            margin-bottom: 15px;
+            padding: 13px;
+            height: 44px;
+            background-position: 98px center;
+        }
+    }
+
+    &__image {
+        z-index: 1;
+        max-width: 640px;
+        max-height: 263px;
+        width: 100%;
+        object-fit: contain;
+        overflow: hidden;
+        align-self: flex-end;
+        
+        @include _1200 {
+            flex-shrink: 4;
+        }
+
+        @include _920 {
+            flex-shrink: 2;
+            align-self: center;
+        }
+
+        @include _600 {
+            max-width: 400px;
+            align-self: flex-end;
+        }
+    }
+
+    .slick-dots {
+        position: absolute;
+        bottom: 45px;
+        left: 50%;
+        display: flex;
+        transform: translateX(-50%);
+        
+        li {
+            opacity: 0.5;
+            transition: opacity 0.3s linear;
+        
+            &:not(:last-child){
+                margin-right: 10px;     
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .slick-active {
+            opacity: 1;
+        }
+
+        button {
+            width: 30px;
+            height: 30px;
+            padding: 0;
+            font-family: 'Rubik','Arial', sans-serif;
+            font-weight: 500;
+            line-height: 1;
+            font-size: 11px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            border: 0;
+            color: #243f4d;
+            outline-color: #ffffff;
+            cursor: pointer;
+        }
+    }
+}

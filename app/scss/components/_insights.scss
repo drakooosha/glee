@@ -1,0 +1,74 @@
+.insights {
+    position: relative;
+    &::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        width: 100%;
+        background-color: #fef7f0;
+        top: 338px;
+        bottom: -261px;
+        
+        @include _1200 {
+            top: 338px;
+        }
+
+        @include _920 {
+            top: 257px;
+        }
+
+        @include _768 {
+            top: 55px;
+        }
+
+        @include _600 {
+            top: 0;
+            bottom: -310px;
+        }
+    }
+
+    &__title {
+        display: flex;
+        margin-bottom: 43px;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        @include _600 {
+            align-items: center;
+        }
+    }
+
+    &__link {
+        max-width: 108px;
+        width: 100%;
+        margin-bottom: 6px;
+        background-image: url('../images/insights/arrow-icon.svg');
+        background-position: right center;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        transition: all 0.5s linear;
+
+        &:hover {
+            transform: scale(1.1);
+            color: $accent-color;
+        }
+    }
+
+    &__items {
+        display: flex;
+
+        @include _768 {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 30px;
+
+            @include _768 {
+                margin: 0 0 30px 0;
+            }
+        }
+    }
+}

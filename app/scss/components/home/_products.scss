@@ -1,0 +1,33 @@
+.products {
+    padding-bottom: 96px;
+
+    @include _1200 {
+        padding-bottom: 60px;
+    }
+
+    &__title {
+        margin-bottom: 25px;
+    }
+
+    &__items {
+        display: grid;
+        margin-bottom: 185px;
+        padding-top: 10px;
+        grid-template-columns: repeat(auto-fill,minmax(277px,1fr));
+        grid-gap: 40px 20px;
+    }
+
+    &__item {
+        min-height: 382px;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+
+        @include _1800 {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
